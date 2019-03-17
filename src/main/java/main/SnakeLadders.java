@@ -13,17 +13,32 @@ public class SnakeLadders{
 	public static boolean snake(int i,int j) {
 		//snake is in 4th place thats the co-ordinate [1,2] i.e, i=1 & j=2
 		//write your code here
-		return false;
+		if(i == 1 && j == 2)
+		{
+		    return true;
+		}
+		else
+		    return false;
 	}
 	public static boolean ladder(int i,int j) {
 		//ladder is in 3rd place thats the co-ordinate [0,3] i.e, i=0 and j=2
 		//write your code here
-		return false;
+		if(i == 0 && j == 2)
+		{
+		    return true;
+		}
+		else
+		    return false;
+		
 	}
 	public static boolean gameOver(int score) {
 		//if the score is greater than 9 you win. 
 		//write your code here
-		return false;
+		if(score > 9)
+			return true;
+		
+		else
+		    return false;
 	}
 	public static void main(String args[]) {
 		board = new int[3][3];
@@ -56,10 +71,10 @@ public class SnakeLadders{
 				for(int j=0;j<3;j++) {
 					play --;
 					if(play==0) {
-						if(snake(i,j)) {
+						if(snake(i,j) == true) {
 							place = place - 4;
 						}
-						if(ladder(i,j)) {
+						if(ladder(i,j) == true) {
 							place = place +5;
 						}
 					}
@@ -71,7 +86,7 @@ public class SnakeLadders{
 				dice = random();
 			place = place + dice;
 			System.out.println(dice);
-			if(gameOver(place)) {
+			if(gameOver(place) == true) {
 				break;
 			}
 
